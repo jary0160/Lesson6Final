@@ -1,0 +1,49 @@
+testing Theory
+================
+
+There are many goals to achieve when testing a program
+
+1) complete code coverage
+==========================
+- not every line of code in a program runs everytime.
+The goal complete code coverage is to test enough times
+to ensure every line gets executed (run) at least once.
+
+2) Testing boundary conditions
+==============================
+- use data that falls right around the limits of certain boundaries
+- ex -> just below, just at and just above particular requirements
+found in loops and if statements
+
+3) testing extreme conditions
+=============================
+-use data that falls very far outside the required limits
+Ex -> try paying emplyee $1000 / hour or 200 hours of work
+-ensure that program responds appropriately to this data
+
+4) testing efficiency
+======================
+-we want to avoid using data sets that take us down indentical paths
+of excution in the code. Once an area is tested we dont need further data
+that tests the same thing.
+Equivalence class (category) - When two sets of data follow the
+same path in a program, they belong to the same equivalence classs.
+ex -> type 1 50 hours             type 1 employee 48 hours
+
+testing Log
+============
+
+test #                Description               Expected              Result
+=======               ===========               =========             ======
+1 (code coverage)  rate: 10 type:1 hours:30       300
+2 (code coverage)  rate: 10 type:1 hours:0    400+200=600
+
+3(boundary)      R:10 t:1 h:39,40,41          OT only for 41
+
+4(extreme)       r:10 t:1 h:0 and 168         Hours not set
+
+5(boundary)  r: 6.49,6.50,30.50,30.51 t:1 h:10 rate only set for # 2,3
+
+6(boundary) r:10 t:2 h:0,1,60,61          hours only set for #2,3
+7(boundary) r:10 t:0,1,2,3 h:45           type only set for #2,3
+                                         OT only for type 1, not 2
